@@ -1,0 +1,23 @@
+ /******
+ Override CSS
+
+*********/
+
+.bg-light {
+    background-color: deepskyblue!important;
+}
+
+.margin-top-20{
+    margin-top: 20px;
+}
+.featured-img{
+    max-height: 200px;
+    
+}
+
+
+.footer-bottom{
+    padding: 20px;
+    margin-top: 20px;
+    background-color: deepskyblue;
+}
