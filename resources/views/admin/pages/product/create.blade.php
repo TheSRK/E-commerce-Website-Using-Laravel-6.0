@@ -9,23 +9,55 @@
                 Add Product
             </div>
             <div class="card-body">
-                <form>
+                <form action="{{ route("admin.product.store") }}" method="POST" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    @include('admin.partials.messages')
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                            else.</small>
+                        <label for="exampleInputEmail1">Title</label>
+                        <input type="text" class="form-control" name="title" id="exampleInputEmail1" 
+                            placeholder="Enter Product Title">
+                        
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Description</label>
+                        <textarea name="description" class="form-control" cols="30" rows="10" placeholder="Write Product description"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Price</label>
+                        <input type="number" class="form-control" name="price" id="exampleInputEmail1" 
+                            placeholder="Enter Product Title">
+                       
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <label for="exampleInputEmail1">Quantity</label>
+                        <input type="number" class="form-control" name="quantity" id="exampleInputEmail1" 
+                            placeholder="Enter Product Title">
+                        
                     </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    <div class="form-group">
+                        <label for="product_image">Product Image</label>
+                        <div class="row">
+                            <div class="col-md-4">
+                                    <input type="file" class="form-control" name="product_image[]" id="product_image" >
+                            </div>    
+                            <div class="col-md-4">
+                                    <input type="file" class="form-control" name="product_image[]" id="product_image" >
+                            </div>    
+                            <div class="col-md-4">
+                                    <input type="file" class="form-control" name="product_image[]" id="product_image" >
+                            </div>    
+                            <div class="col-md-4">
+                                    <input type="file" class="form-control" name="product_image[]" id="product_image" >
+                            </div>    
+                            <div class="col-md-4">
+                                    <input type="file" class="form-control" name="product_image[]" id="product_image" >
+                            </div>    
+                        </div>
+                        
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                
+                    <button type="submit" class="btn btn-primary">Add Product</button>
                 </form>
             </div>
 
